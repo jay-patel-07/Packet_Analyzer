@@ -2,10 +2,6 @@ import socket
 from scapy.all import *
 import pywifi
 from pywifi import *
-import logging
-
-def log_and_print(message):
-    print(message)
 
 def port_scanner(target, start_port, end_port):
     open_ports = []
@@ -19,10 +15,10 @@ def port_scanner(target, start_port, end_port):
                 print(f"Port {port} is open.")
             s.close()
         except KeyboardInterrupt:
-            print("\nExiting", logging.ERROR)
+            print("\nExiting")
             exit()
         except Exception as e:
-            print(f"Error: {e}", logging.ERROR)
+            print(f"Error: {e}")
             pass
     return open_ports
 
